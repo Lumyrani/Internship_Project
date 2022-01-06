@@ -1,0 +1,12 @@
+.card-mb-3{width: 440px; float: left; background-color: rgb(255, 255, 255); margin-left: 20px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.card{width:30%; float: right; padding-top: 10px; background-color: white; margin-right: 50px;
+    margin-left: 105px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.font{font-size: 15px;}
+.title{padding-left: 550px;}
+.btn{ padding-left: 100px;}
+.card-title{font-size: 18px; font-weight: bold; color: white; text-align: center; background-color: #142af1;  padding-top: 8px; height: 35px;}
+.card-prof{background-color:#4f5ee7;font-size: 18px;  font-weight: bold; color: white; text-align: center; height: 35px;  padding-top: 8px;}
+.in-btn{width:33.33%;float: left; background-color:#b2d0ed; margin-top: 5px; padding-top: 8px;}
+.btn-info{margin-left:70px ;}

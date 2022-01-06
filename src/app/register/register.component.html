@@ -1,0 +1,49 @@
+
+<div class="container-fluid">
+    <h2><b><u>Join Now</u></b></h2>
+
+    <div class="reg-page">
+        <form class="userFormContainerCls" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+            <div>
+                <label for="role">Register as a</label>
+                <select name="role" id="role" class="form-control" formControlName="roles">
+                    <option *ngFor="let role of roleses" [value]="role.role">{{role.role}}</option>
+
+                </select>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'is-invalid': userForm.get('fullName').errors && 
+        (userForm.get('fullName').touched || userForm.get('fullName').dirty)}">
+                <label for="fullName">Full Name</label>
+                <input type="text" class="form-control" formControlName="fullName" required id="fullName"
+                    placeholder="Full Name" />
+                <div class="help-block" *ngIf="userForm.get('fullName').errors && 
+        (userForm.get('fullName').touched || userForm.get('fullName').dirty)">
+                    <div *ngIf="userForm.get('fullName').errors.required">
+                        Full name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="text" class="form-control" id="email" formControlName="email" placeholder="EMAIL ID">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password"
+                    placeholder="password">
+            </div>
+
+            <div class="form-group">
+                <label for="userMobile">Mobile No</label>
+                <input type="number" class="form-control" id="userMobile" formControlName="userMobile"
+                    placeholder="Mobile">
+            </div>
+        
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"> submit</button>
+            </div>
+        </form>
+    </div>
+</div>

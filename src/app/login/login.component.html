@@ -1,0 +1,26 @@
+<div class="container login-container">
+  <div class="row">
+    <div class="col-md-6 login-form-1">
+      <div>
+        <h3 style="color: black;"><u><b>Sign In </b></u></h3>
+      </div>
+
+      <form class="userFormContainerCls" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="email">Email ID</label>
+          <input type="text" class="form-control" id="email" formControlName="email" placeholder="EMAIL ID">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password" placeholder="password">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary"> Login</button>
+        </div>
+      </form>
+      <a class="fon-clr" routerLink="/register"> new user?</a>
+    </div>
+  </div>
+</div>
+

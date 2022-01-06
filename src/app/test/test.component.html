@@ -1,0 +1,30 @@
+<div class="card">
+  <h2 >Assessment</h2>
+</div>
+
+<div id="container">
+  <span>Time Elapsed : {{_testService.displayTimeElapsed()}}</span> 
+  <div id="question">
+    {{skill_id.question}}
+    </div>
+   
+  <div id="qImg"></div>
+
+  <div id="choices">
+    <div class="choice" id="A" (click)="checkAnswer(_testService.qns[_testService.qnProgress].option1)"></div>
+    <div class="choice" id="B" (click)="checkAnswer(_testService.qns[_testService.qnProgress].option2)"></div>
+    <div class="choice" id="C" (click)="checkAnswer(_testService.qns[_testService.qnProgress].option3)"></div>
+    <div class="choice" id="D" (click)="checkAnswer(_testService.qns[_testService.qnProgress].option4)"></div>
+  </div>
+
+  <div id="timer">
+    <div id="counter">    {{answerIsCorrect() }}</div>
+    <div id="btimeGauge"></div>
+    <div id="timeGauge"></div>
+  </div>
+  <div id="progress">
+
+  </div>
+ 
+  <div id="scoreContainer" style="display: none">    </div>
+</div>

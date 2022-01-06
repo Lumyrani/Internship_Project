@@ -1,0 +1,32 @@
+<p>
+  Add Questions Based On Skills
+</p>
+<div class="container">
+  <form class="form-horizontal" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="question">Question</label>
+      <input type="text" class="form-control" id="question" formControlName="question" placeholder="Question">
+    </div>
+
+    <div class="form-group">
+      <label for="choice1">Option A</label>
+      <input type="text" class="form-control" id="choice1" formControlName="choice1" placeholder="Option A">
+    </div>
+    <div class="form-group">
+      <label for="choice2">Option B</label>
+      <input type="text" class="form-control" id="choice2" formControlName="choice2" placeholder="Option B">
+    </div>
+    <div class="form-group">
+      <label for="choice3">Option C</label>
+      <input type="text" class="form-control" id="choice3" formControlName="choice3" placeholder="Option C">
+    </div>
+    <div class="form-group">
+      <label for="choice1">Option D</label>
+      <input type="text" class="form-control" id="choice4" formControlName="choice4" placeholder="Option D">
+    </div>
+    <div class="form-group">
+  <label for="answer">Answer</label>
+  <input type="text" class="form-control" id="answer" formControlName="answer" placeholder="Answer">
+</div>
+  </form>
+</div>

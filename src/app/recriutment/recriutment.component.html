@@ -1,0 +1,34 @@
+
+<p>
+
+  <b><u>Company HR Details</u></b>
+  <br>
+  <br>
+    <label for="Company" class="font">Company Name:{{result.fullName}}</label>
+    <br>
+    <label for="email" class="font">Email:{{result.email}}</label>
+    <br>
+    <label for="userMobile" class="font">Mobile:{{result.userMobile}}</label>
+    <br> 
+</p>
+<div class="container">
+  <form class="form-horizontal" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="job">Job </label>
+      <input type="text" class="form-control" id="job" formControlName="job" placeholder="Job description looking for candidates">
+    </div>
+
+   
+  </form>
+
+<div>
+  <h3>Select Skills looking for the new candidates</h3>
+  <label for="" class="chackbox-inline">
+    <input type="checkbox" name="angular" formControlName="angular">Angular
+    <input type="checkbox" name="php" formControlName="php">PHP
+    <input type="checkbox" name="node" formControlName="node">NodeJS
+    <input type="checkbox" name="mongo" formControlName="mongo">MongoDB
+    <input type="checkbox" name="sql" formControlName="sql">SQL
+  </label>
+</div>
+</div>

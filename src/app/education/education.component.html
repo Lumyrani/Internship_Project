@@ -1,0 +1,49 @@
+
+<div class="container-fluid">
+  
+
+    <div class="reg-page">
+       
+        <form class="userFormContainerCls" [formGroup]="eduForm" (ngSubmit)="onSubmit() ; clicked = true;">
+            <div class="form-group">
+                <label for="fullName">College Name</label>
+                <input type="text" class="form-control" formControlName="college" required id="collegeName"
+                    placeholder="College Name"  />
+                
+            </div>
+            <div class="form-group">
+                <label for="degree">Degree</label>
+                <input type="text" class="form-control" id="degree" formControlName="degree" placeholder="Degree">
+            </div>
+
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="department" class="form-control" id="department" formControlName="department"
+                    placeholder="DEPARTMENT">
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" formControlName="state"
+                    placeholder="State">
+            </div>
+
+            <div class="form-group">
+                <label for="boardName">Board Name</label>
+                <input type="text" class="form-control" id="boardName" formControlName="boardName" placeholder="BoardName">
+            </div>
+           
+
+            <div class="form-group">
+                <label for="percentage">Percentage</label>
+                <input type="text" class="form-control" id="percentage" formControlName="percentage" placeholder="Percentage">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" [disabled]="clicked" class="btn btn-primary"> Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>

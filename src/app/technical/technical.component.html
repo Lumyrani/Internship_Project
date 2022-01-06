@@ -1,0 +1,31 @@
+<div class="container-fluid">
+ 
+
+  <div class="reg-page">
+    <form [formGroup]="technicalForm" (ngSubmit)="onSubmit() ; clicked = true;">
+   
+
+      <div class="form-group">
+   
+        <label for="skill">Choose your Technical Skill for assessment </label>
+          <select name="skill" id="skill" class="form-control" formControlName="skill">
+            <option  *ngFor='let i of skills' [value]="i._id" >{{i.skill}}</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" [disabled]="clicked"  class="btn btn-primary">click here to select this skill </button>
+      </div>
+
+    </form>
+  </div>
+
+  </div>
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem; margin-left: 1000px; ">
+
+    <div class="card-body">
+        <h5 class="card-title">Take a skill assessment</h5>
+        <p class="card-text">Are you ready for an assessment ?.</p>
+        <button class="btn-info" (click)="showTest()"> Start Quiz </button>
+    </div>
+</div>  

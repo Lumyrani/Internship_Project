@@ -1,0 +1,31 @@
+
+
+
+<html>
+<div class="title" >
+
+  <b><u>Details of Interviewer</u></b>
+  <br>
+  <br>
+    <label for="fullName" class="font">Full Name:{{result.fullName}}</label>
+    <br>
+    <label for="email" class="font">Email:{{result.email}}</label>
+    <br>
+    <label for="userMobile" class="font">Mobile:{{result.userMobile}}</label>
+    <br>
+    <label for="education" class="font">Education:{{result.education}}</label>
+    <br>
+    <button class="btn btn-primary" routerLink="/personal">Edit </button>
+</div>
+
+<div>
+  <h3>Select Skills</h3>
+  <label for="" class="chackbox-inline">
+    <input type="checkbox" name="angular" formControlName="angular">Angular
+    <input type="checkbox" name="php" formControlName="php">PHP
+    <input type="checkbox" name="node" formControlName="node">NodeJS
+    <input type="checkbox" name="mongo" formControlName="mongo">MongoDB
+    <input type="checkbox" name="sql" formControlName="sql">SQL
+  </label>
+</div>
+</html> 
