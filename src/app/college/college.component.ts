@@ -9,13 +9,12 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
-
 @Component({
-  selector: "app-recriutment",
-  templateUrl: "./recriutment.component.html",
-  styleUrls: ["./recriutment.component.css"],
+  selector: "app-college",
+  templateUrl: "./college.component.html",
+  styleUrls: ["./college.component.css"],
 })
-export class RecriutmentComponent implements OnInit {
+export class CollegeComponent implements OnInit {
   form: FormGroup;
   clicked = false;
   tclicked = false;
@@ -29,18 +28,20 @@ export class RecriutmentComponent implements OnInit {
   skills: any;
   tech: any;
   skill: any;
-
+  college: any;
+  user1: any;
 
   userForm = new FormGroup({
     fullName: new FormControl(""),
     email: new FormControl("", [Validators.required]),
+
     userMobile: new FormControl(""),
+    college: new FormControl(""),
   });
 
   technicalForm = new FormGroup({
-    companyName: new FormControl(""),
+    college: new FormControl(""),
     skill: new FormControl(""),
-
   });
 
   constructor(
@@ -55,7 +56,6 @@ export class RecriutmentComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.getAllSkills();
     this.loginDetail = localStorage.getItem("item");
     let idStr = JSON.parse(this.loginDetail);
@@ -130,16 +130,11 @@ export class RecriutmentComponent implements OnInit {
   }
 
   onCheckboxChange(e) {
-
-
     if (e.target.checked) {
-
       this._profileService
         .getUpdateTech(this.user, this.id)
         .subscribe((response) => {
-    
           this.technicalForm.controls["skill"].setValue(e.target.value);
- 
         });
     }
   }
@@ -148,12 +143,12 @@ export class RecriutmentComponent implements OnInit {
   }
 
   onTSubmit() {
-    this.user = this.technicalForm.value;
-    console.log("techupdate", this.user);
-    this._profileService.getUpdateTech(this.user, this.id).subscribe(
+    this.user1 = this.technicalForm.value;
+    console.log("techupdate", this.user1);
+    console.log("techupdateid", this.id);
+    this._profileService.getUpdateTech(this.user1, this.id).subscribe(
       (res) => {
         console.log("response in technical user upload", res);
-     
       },
       (err) => {
         console.log("error on technical details submission ", err);

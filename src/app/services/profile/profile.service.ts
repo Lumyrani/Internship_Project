@@ -73,5 +73,6 @@ export class ProfileService {
     return this.http.get<any>(`${this.baseUrl}/skill`, { headers: options })
 
   }
+ 
 
 }

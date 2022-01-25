@@ -1,15 +1,15 @@
-
 <nav class="navbar navbar-expand-lg navbar">
-   
+
     <div>
-    <a class="navbar" href="#">
-        <img src="../../assets/logo.jpeg"width="80" height="80" alt="freego passportlogo" class="rounded-circle">
-  
-        <i> <b><span style="font-size:30px;color:#070f56;font-style: oblique;font-family:'Franklin Gothic Medium';">FreeGo Passport</span></b> </i> 
-    </a>
-       
+        <a class="navbar" href="#">
+            <img src="../../assets/logo.jpeg" width="80" height="80" alt="freego passportlogo" class="rounded-circle">
+
+            <i> <b><span style="font-size:30px;color:#070f56;font-style: oblique;font-family:'Franklin Gothic Medium';">FreeGo
+                        Passport</span></b> </i>
+        </a>
+
     </div>
- 
+
     <button class="navbar-toggler second-button" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent23" aria-controls="navbarSupportedContent23" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -18,53 +18,51 @@
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent23">
-     
+
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-               
+
                 <a class="nav-link" class="btn btn-outline-dark my-2 my-sm-0" href="/home">Home
                     <span class="sr-only sr-only-focusable">(current)</span>
                 </a>
             </li>
         </ul>
 
-  
-    <input class="btn btn-outline-dark my-2 my-sm-0" type="search" placeholder="Search Jobs" aria-label="Search">
-   <button class="btn btn-btn-outline-dark my-sm-0"  
-    type="submit"> 
-    <span style="color: rgb(4, 4, 138)">
-        <i class="fas fa-search"></i>
-        </span>
-    </button>
+
+        <input class="btn btn-outline-dark my-2 my-sm-0" type="search" placeholder="Search Jobs" aria-label="Search">
+        <button class="btn btn-btn-outline-dark my-sm-0" type="submit">
+            <span style="color: rgb(4, 4, 138)">
+                <i class="fas fa-search"></i>
+            </span>
+        </button>
 
 
-  
-            <ul class="navbar-nav">
-              
-                 <li class="nav-item">
-      
-                     <a class="nav-link"    *ngIf= "!_loginService.loggedIn()" class="fa fa-user-plus"href="/register">
-                     Join Now</a>
-                
-                </li>
-                
-                
-             <div> &nbsp;&nbsp;</div>
-        
-                <li class="nav-item">
-               
-                     <a class="nav-link" *ngIf= "!_loginService.loggedIn()" class="fa fa-user"href="/login">Sign in</a> 
-             
-                </li>   
-           
-           
-            </ul>
-        
-            <a class="nav-link"  *ngIf= "_loginService.loggedIn()" style="cursor:pointer"(click)="onLogoutClick()">  <b>Hi,{{result.fullName}} </b> &nbsp;  <a class="nav-link "class="far fa-user"><b>LogOut</b></a></a>
-  
-    
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+
+                <a class="nav-link" *ngIf="!_loginService.loggedIn()" class="fa fa-user-plus" href="/register">
+                    Join Now</a>
+
+            </li>
+
+
+            <div> &nbsp;&nbsp;</div>
+
+            <li class="nav-item">
+
+                <a class="nav-link" *ngIf="!_loginService.loggedIn()" class="fa fa-user" href="/login">Sign in</a>
+
+            </li>
+
+
+        </ul>
+
+        <a class="nav-link" *ngIf="_loginService.loggedIn()" style="cursor:pointer" (click)="onLogoutClick()">
+            <b>Hi,{{result.fullName}} </b> &nbsp; <a class="nav-link " class="far fa-user"><b>LogOut</b></a></a>
+
+
     </div>
 
 </nav>
-
-    

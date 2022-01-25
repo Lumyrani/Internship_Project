@@ -40,4 +40,15 @@ export class TestService {
     let options = this.initRequestOptions()
     return this.http.get<any>(`${this.baseUrl}/question/${id}`, { headers: options })
   }
+  postQuestion(question,id): Observable<any> {
+    var datas: any = {}
+    datas = question
+    var data = JSON.stringify(datas)
+    console.log("postQuestion", data)
+    console.log("id service", id)
+    console.log("question service", question)
+    let options = this.initRequestOptions()
+    return this.http.post<any>(`${this.baseUrl}/question/${id}`, data, { headers: options })
+  }
+
 }

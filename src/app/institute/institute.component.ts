@@ -9,19 +9,18 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
-
 @Component({
-  selector: "app-recriutment",
-  templateUrl: "./recriutment.component.html",
-  styleUrls: ["./recriutment.component.css"],
+  selector: "app-institute",
+  templateUrl: "./institute.component.html",
+  styleUrls: ["./institute.component.css"],
 })
-export class RecriutmentComponent implements OnInit {
-  form: FormGroup;
+export class InstituteComponent implements OnInit {
+  // technicalForm: FormGroup;
   clicked = false;
   tclicked = false;
   user: any;
 
-
+  // form: FormGroup;
   id: any;
   result: any;
   loginDetail: any;
@@ -29,18 +28,22 @@ export class RecriutmentComponent implements OnInit {
   skills: any;
   tech: any;
   skill: any;
-
-
+  institute: any;
+  user1: any;
+  skillses: [];
+  // isSelected:boolean=false
+  // _id:[];
+  form: FormGroup;
   userForm = new FormGroup({
     fullName: new FormControl(""),
     email: new FormControl("", [Validators.required]),
+
+    institute: new FormControl(""),
     userMobile: new FormControl(""),
   });
 
   technicalForm = new FormGroup({
-    companyName: new FormControl(""),
     skill: new FormControl(""),
-
   });
 
   constructor(
@@ -55,13 +58,13 @@ export class RecriutmentComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.getAllSkills();
     this.loginDetail = localStorage.getItem("item");
     let idStr = JSON.parse(this.loginDetail);
     this.id = idStr.user_id;
     this.getUserById();
   }
+
   onCheckboxChanges(e) {
     const checkArray: FormArray = this.form.get("checkArray") as FormArray;
 
@@ -130,16 +133,11 @@ export class RecriutmentComponent implements OnInit {
   }
 
   onCheckboxChange(e) {
-
-
     if (e.target.checked) {
-
       this._profileService
         .getUpdateTech(this.user, this.id)
         .subscribe((response) => {
-    
           this.technicalForm.controls["skill"].setValue(e.target.value);
- 
         });
     }
   }
@@ -148,15 +146,16 @@ export class RecriutmentComponent implements OnInit {
   }
 
   onTSubmit() {
-    this.user = this.technicalForm.value;
-    console.log("techupdate", this.user);
-    this._profileService.getUpdateTech(this.user, this.id).subscribe(
+    this.user1 = this.technicalForm.value;
+
+    console.log("instituteupdate", this.user1);
+    console.log("techupdateid", this.id);
+    this._profileService.getUpdateTech(this.user1, this.id).subscribe(
       (res) => {
-        console.log("response in technical user upload", res);
-     
+        console.log("response in institute technical user upload", res);
       },
       (err) => {
-        console.log("error on technical details submission ", err);
+        console.log("error on  institute technical details submission ", err);
       }
     );
   }

@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+// import { FormsModule } from '@angular/forms';
 
 import { RegisterService } from './services/register/register.service'
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +31,9 @@ import { TimerComponent } from './timer/timer.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { FooterComponent } from './footer/footer.component';
 import { UniversitiesComponent } from './universities/universities.component';
-import { AdminProfileComponent } from './admin-profile/admin-profile.component'
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { CollegeComponent } from './college/college.component';
+import { InstituteComponent } from './institute/institute.component'
 // import { MaterialModule } from './material/material.module';
 
 @NgModule({
@@ -48,7 +54,9 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component'
     AddQuestionComponent,
     FooterComponent,
     UniversitiesComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    CollegeComponent,
+    InstituteComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +69,10 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component'
     ReactiveFormsModule,
     RouterModule,
     // MaterialModule
-
+    MatCheckboxModule,
+    MatListModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [RegisterService],
   bootstrap: [AppComponent]

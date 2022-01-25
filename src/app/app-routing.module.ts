@@ -14,6 +14,9 @@ import { TestComponent } from './test/test.component';
 import { AddQuestionComponent } from './add-question/add-question.component'
 import { UniversitiesComponent } from './universities/universities.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { CollegeComponent } from './college/college.component';
+import { InstituteComponent } from './institute/institute.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
@@ -37,6 +40,8 @@ const routes: Routes = [
   { path: 'test', component: TestComponent },
   { path: 'technical', component: TechnicalComponent },
   { path: 'educational', component: EducationComponent },
+  {path:'college',component:CollegeComponent},
+  {path:'institute',component:InstituteComponent}
 ];
 
 @NgModule({

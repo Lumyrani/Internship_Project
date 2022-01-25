@@ -1,66 +1,58 @@
-<div >
-    <div [ngStyle]="{'background-color':'CadetBlue'}">
+<div>
+  <div [ngStyle]="{'background-color':'CadetBlue'}">
 
     <h5 class="card-title">
-        ACCOUNT PROFILE</h5>
+      ACCOUNT PROFILE</h5>
     <div class="row no-gutters">
 
-    
-            <img src="../../assets/123.jpg" class="card-img" style="width: 100px">
-      
-        <div class="col-md-8">
-            <div class="card-body">
 
-                <label for="fullName" class="font-weight-bold">Full Name:{{result?.fullName}}</label>
-                <br>
-                <label for="email" class="font-weight-bold">Email:{{result?.email}}</label>
-                <br>
-                <label for="userMobile" class="font-weight-bold">Mobile:{{result?.userMobile}}</label>
-                <br>
-               
-                <p class="card-text"></p>
-              
-            </div>
+      <img src="../../assets/123.jpg" class="card-img" style="width: 100px">
+
+      <div class="col-md-8">
+        <div class="card-body">
+
+          <label for="fullName" class="font-weight-bold">Full Name:{{result?.fullName}}</label>
+          <br>
+          <label for="email" class="font-weight-bold">Email:{{result?.email}}</label>
+          <br>
+          <label for="userMobile" class="font-weight-bold">Mobile:{{result?.userMobile}}</label>
+          <br>
+
+          <p class="card-text"></p>
+
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
 
-<br> 
-<br> 
-<div class="card" style="width: 18rem;">
+  <br>
+  <br>
+  <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Fill out your Technical skill </h5>
       <p class="card-text">You can take a sample assessment test accordingly your technical skill.</p>
       <a [routerLink]="['technical']" class="btn btn-primary">Click here to </a>
     </div>
   </div>
-  
+
   <div class="card text-center" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">Educational details</h5>
-        <p class="card-text">You can provide your educational details over here</p>
-        <a [routerLink]="['educational']" class="btn btn-primary">Click here to </a>
+      <h5 class="card-title">Educational details</h5>
+      <p class="card-text">You can provide your educational details over here</p>
+      <a [routerLink]="['educational']" class="btn btn-primary">Click here to </a>
     </div>
   </div>
-  
+
   <div class="card text-end" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">Fill out your Personal details </h5>
-        <p class="card-text">Please provide your informations to complete your profile</p>
-        <!-- <button class="in-btn" [routerLink]="['personal']" routerLinkActive='active'></button> -->
-        <a [routerLink]="['personal']"routerLinkActive='active' class="btn btn-primary">Click here to </a>
+      <h5 class="card-title">Fill out your Personal details </h5>
+      <p class="card-text">Please provide your informations to complete your profile</p>
+      <!-- <button class="in-btn" [routerLink]="['personal']" routerLinkActive='active'></button> -->
+      <a [routerLink]="['personal']" routerLinkActive='active' class="btn btn-primary">Click here to </a>
     </div>
   </div>
 
-            
-       
-
-
-
-
-
-
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>

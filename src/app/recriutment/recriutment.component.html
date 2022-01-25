@@ -1,34 +1,61 @@
+<div class="container-fluid">
+  <div class="reg-page">
+    <p>
+      <b><u>Company HR Home Page </u></b>
+      <br>
+      <br>
+    </p>
+  </div>
+  <div>
+    <form class="userFormContainerCls" [formGroup]="userForm" (ngSubmit)="onSubmit(); clicked = true;">
+      <div class="form-group">
+        <label for="fullName">Full Name:{{result?.fullName}}</label>
+        <input type="text" class="form-control" formControlName="fullName" required id="fullName"
+          placeholder="Full Name" [ngModel]="userObj?.fullName" />
+        <div class="help-block" *ngIf="userForm.get('fullName').errors && 
+             (userForm.get('fullName').touched || userForm.get('fullName').dirty)">
+          <div *ngIf="userForm.get('fullName').errors.required">
+            Full name is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="text" class="form-control" id="email" formControlName="email" placeholder="EMAIL ID">
+      </div>
 
-<p>
 
-  <b><u>Company HR Details</u></b>
-  <br>
-  <br>
-    <label for="Company" class="font">Company Name:{{result.fullName}}</label>
-    <br>
-    <label for="email" class="font">Email:{{result.email}}</label>
-    <br>
-    <label for="userMobile" class="font">Mobile:{{result.userMobile}}</label>
-    <br> 
-</p>
-<div class="container">
-  <form class="form-horizontal" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="job">Job </label>
-      <input type="text" class="form-control" id="job" formControlName="job" placeholder="Job description looking for candidates">
-    </div>
+      <div class="form-group">
+        <label for="userMobile">Mobile No</label>
+        <input type="number" class="form-control" id="userMobile" formControlName="userMobile" placeholder="Mobile">
+      </div>
 
-   
-  </form>
+      <div class="reg-page">
+        <form [formGroup]="technicalForm" (ngSubmit)="onTSubmit() ; tclicked = true;">
 
-<div>
-  <h3>Select Skills looking for the new candidates</h3>
-  <label for="" class="chackbox-inline">
-    <input type="checkbox" name="angular" formControlName="angular">Angular
-    <input type="checkbox" name="php" formControlName="php">PHP
-    <input type="checkbox" name="node" formControlName="node">NodeJS
-    <input type="checkbox" name="mongo" formControlName="mongo">MongoDB
-    <input type="checkbox" name="sql" formControlName="sql">SQL
-  </label>
-</div>
+
+          <div class="form-group">
+            <label for="company">Company Name</label>
+
+            <input type="text" class="form-control" name="company" id="company" formControlName="companyName">
+       
+          </div>
+
+          <label>Choose the Technical Skill of candidates you looking for job in your company : &nbsp; </label>
+          <div class="form-check form-check-inline" *ngFor="let i of skills ; let i=index">
+
+            <input type="checkbox" [value]="i._id" (change)="onCheckboxChanges($event)">{{i.skill}}
+          </div>
+       
+
+          <button type="submit" [disabled]="clicked" class="btn btn-primary">click here to select this skill </button>
+
+        </form>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" [disabled]="clicked" class="btn btn-primary"> Submit</button>
+      </div>
+    </form>
+  </div>
 </div>

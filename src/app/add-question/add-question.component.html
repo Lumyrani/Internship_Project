@@ -1,32 +1,84 @@
-<p>
-  Add Questions Based On Skills
-</p>
-<div class="container">
-  <form class="form-horizontal" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="question">Question</label>
-      <input type="text" class="form-control" id="question" formControlName="question" placeholder="Question">
-    </div>
+<div class="container-fluid">
+  <div class="reg-page">
+    <p>
+      <b><u>Questioner Home Page </u></b>
+      <br>
+      <br>
+    </p>
+  </div>
+  <div>
+    <form class="userFormContainerCls" [formGroup]="userForm" (ngSubmit)="onFSubmit(); clicked = true;">
+      <div class="form-group">
+        <label for="fullName">Full Name:{{result?.fullName}}</label>
+        <input type="text" class="form-control" formControlName="fullName" required id="fullName"
+          placeholder="Full Name" [ngModel]="userObj?.fullName" />
+        <div class="help-block" *ngIf="userForm.get('fullName').errors && 
+               (userForm.get('fullName').touched || userForm.get('fullName').dirty)">
+          <div *ngIf="userForm.get('fullName').errors.required">
+            Full name is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="text" class="form-control" id="email" formControlName="email" placeholder="EMAIL ID">
+      </div>
 
-    <div class="form-group">
-      <label for="choice1">Option A</label>
-      <input type="text" class="form-control" id="choice1" formControlName="choice1" placeholder="Option A">
-    </div>
-    <div class="form-group">
-      <label for="choice2">Option B</label>
-      <input type="text" class="form-control" id="choice2" formControlName="choice2" placeholder="Option B">
-    </div>
-    <div class="form-group">
-      <label for="choice3">Option C</label>
-      <input type="text" class="form-control" id="choice3" formControlName="choice3" placeholder="Option C">
-    </div>
-    <div class="form-group">
-      <label for="choice1">Option D</label>
-      <input type="text" class="form-control" id="choice4" formControlName="choice4" placeholder="Option D">
-    </div>
-    <div class="form-group">
-  <label for="answer">Answer</label>
-  <input type="text" class="form-control" id="answer" formControlName="answer" placeholder="Answer">
-</div>
-  </form>
+      <div class="form-group">
+        <label for="userMobile">Mobile No</label>
+        <input type="number" class="form-control" id="userMobile" formControlName="userMobile" placeholder="Mobile">
+      </div>
+    </form>
+  </div>
+
+
+  <p>
+    Add questions</p>
+
+  <div class="container">
+    <form class="form-horizontal" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <form [formGroup]="technicalForm" (ngSubmit)="onTSubmit() ; tclicked = true;">
+          <label>Choose the Technical Skill to add questions with your choice of skill: &nbsp; </label>
+          <div class="form-check form-check-inline" *ngFor="let i of skills ; let i=index">
+
+            <input type="checkbox" [value]="i._id" (change)="onCheckboxChange($event)">{{i.skill}}
+
+          </div>
+          <button type="submit" [disabled]="clicked" class="btn btn-primary">click here to select this skill </button>
+        </form>
+        <!-- <input type="text" class="form-control" id="question" formControlName="question" placeholder="Question"> -->
+      </div>
+
+      <div class="form-group">
+        <label for="question">Question</label>
+        <input type="text" class="form-control" id="question" formControlName="question" placeholder="Question">
+      </div>
+
+      <div class="form-group">
+        <label for="choice1">Option A</label>
+        <input type="text" class="form-control" id="option1" formControlName="option1" placeholder="Option A">
+      </div>
+      <div class="form-group">
+        <label for="choice2">Option B</label>
+        <input type="text" class="form-control" id="option2" formControlName="option2" placeholder="Option B">
+      </div>
+      <div class="form-group">
+        <label for="choice3">Option C</label>
+        <input type="text" class="form-control" id="option3" formControlName="option3" placeholder="Option C">
+      </div>
+      <div class="form-group">
+        <label for="choice1">Option D</label>
+        <input type="text" class="form-control" id="option4" formControlName="option4" placeholder="Option D">
+      </div>
+      <div class="form-group">
+        <label for="answer">Answer</label>
+        <input type="text" class="form-control" id="answer" formControlName="answer" placeholder="Answer">
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="clicked" class="btn btn-primary"> Submit</button>
+      </div>
+
+    </form>
+  </div>
 </div>
